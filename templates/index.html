@@ -1,0 +1,82 @@
+{% extends "bootstrap/base.html" %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='css/style.css')}}">
+{% endblock %}
+
+{% block content %}
+
+
+  <form>
+    <h1> Research Survey Tool </h1>
+  </br>
+</br>
+</br>
+</br>
+
+    <div class="container text-left">
+        <div class="row mb-3">
+            <label for="SearchArticles" class="col-sm-1 col-form-label">Search Articles</label>
+            <div class="col-sm-7">
+                <input type="email" class="form-control" id="SearchArticles">
+            </div>
+                <div class="col-sm-1">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        ADD
+                        </button>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Add with AND</a></li>
+                        <li><a class="dropdown-item" href="#">Add with OR</a></li>
+                        <li><a class="dropdown-item" href="#">Add with NOT</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">    
+            <div class="row">
+                <div class="col-sm-2"></div>
+                <div class="form-group">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                    PubMed
+                    </label>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                    <label class="form-check-label" for="flexCheckChecked">
+                    Web Of Science
+                    </label>
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
+                    <label class="form-check-label" for="flexCheckChecked">
+                    Scopus
+                    </label>
+                </div>
+            </div>
+    </div>
+
+    <div class="container text-left">
+        <label for="Query" class="col-sm-1 col-form-label">Query</label>
+        <div class="form-floating">
+            <div class="col-sm-5">
+                <textarea class="form-control" placeholder="Query will be formed here" id="QueryForSearch" style="height: 100px"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            </br>
+            <div class="col-sm-5"></div>
+            <button class="btn btn-outline-success" type="submit" >Search</button>
+        </div>
+    </div>     
+
+
+
+  </form>
+
+
+{% endblock %}
