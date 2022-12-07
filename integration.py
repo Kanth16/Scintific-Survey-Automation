@@ -12,12 +12,13 @@ def pubmeddata(topic,starting=0):
         df = pd.DataFrame(columns=['ArticleTitle', 'Authors', 'PMID', 'Language', 'Date'])
         for i, paper in enumerate(papers['PubmedArticle']):
             authors = []
-            if paper['MedlineCitation']['Article']['AuthorList'] is not None:
+            if 'AuthorList' in paper['MedlineCitation']['Article'].keys():
                 for name in paper['MedlineCitation']['Article']['AuthorList']:
                     authors.append(name['LastName'] + ' ' + name['Initials'] + ' ')
+            else:
+                authors = 'No authors listed'
             artDate = paper['MedlineCitation']['DateRevised']['Day'] + '/' + \
-                      paper['MedlineCitation']['DateRevised'][
-                          'Month'] + '/' + paper['MedlineCitation']['DateRevised']['Year']
+                      paper['MedlineCitation']['DateRevised']['Month'] + '/' + paper['MedlineCitation']['DateRevised']['Year']
             dictTemp = {
                 "ArticleTitle": paper['MedlineCitation']['Article']['ArticleTitle'],
                 "Authors": ','.join(authors),
