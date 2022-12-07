@@ -7,33 +7,22 @@
 
 {% block content %}
 
+<form method="post">
 
-  <form method="post">
-    <h1> Research Survey Tool </h1>
-  </br>
+<h1> Research Survey Tool </h1>
 </br>
 </br>
 </br>
-
+</br>
     <div class="container text-left">
         <div class="row mb-3">
             <label for="SearchArticles" class="col-sm-1 col-form-label">Search Articles</label>
             <div class="col-sm-7">
-                <input type="text" class="form-control" name="SearchArticles">
+                <input type="text" class="form-control" name="data">
             </div>
                 <div class="col-sm-1">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                        ADD
-                        </button>
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Add with AND</a></li>
-                        <li><a class="dropdown-item" href="#">Add with OR</a></li>
-                        <li><a class="dropdown-item" href="#">Add with NOT</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                    <button class="btn btn-outline-success" type="submit" >Search</button>
+                </div>     
         </div>
     </div>
 
@@ -58,21 +47,8 @@
             </div>
     </div>
 
-    <div class="container text-left">
-        <label for="Query" class="col-sm-1 col-form-label">Query</label>
-        <div class="form-floating">
-            <div class="col-sm-5">
-                <textarea name="data" class="form-control" placeholder="Query will be formed here" id="QueryForSearch" style="height: 100px"></textarea>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div>
-            </br>
-            <div class="col-sm-5"></div>
-            <button class="btn btn-outline-success" type="submit" >Search</button>
-        </div>
-    </div>     
+
+
 
 
 
